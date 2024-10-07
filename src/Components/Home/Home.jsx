@@ -13,7 +13,7 @@ function Home() {
         <h1 className="w-[405px] text-white text-5xl font-medium max-sm:text-3xl max-[1130px]:text-center max-sm:w-[300px]">
           Master the Market with Real-Time{" "}
           <span className="font-bold">
-            <i>Crypto Info</i>
+            <i>Crypto Data</i>
           </span>
         </h1>
         <Link to={"/coins"} className="max-[1130px]:text-center"><button className="w-fit bg-white py-2 px-5 rounded-md text-xl font-medium outline-1 hover:bg-main-color hover:outline hover:outline-white hover:text-white transition-all ease-in-out duration-300 ">
