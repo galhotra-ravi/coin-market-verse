@@ -8,16 +8,19 @@ function CoinPage() {
   const [coinsData, setCoinsData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  const notifyNotFound = () => toast.error("Coin not found", { toastId: "not-found" });
+  const notifyTryAgain = () => toast.error("Please try again after 30 seconds!", { toastId: "try-again" });
+
   const fetchCoinsData = () => {
     setIsLoading(true);
     fetch(`https://api.coingecko.com/api/v3/coins/${coinID}`)
       .then((response) => {
         console.log("Response Status:", response.status);
         if (response.status === 404) {
-          toast.error("Coin not found!");
+          notifyNotFound();
           throw new Error("Coin not found");
         } else if (response.status === 429) {
-          toast.error("Please try again after 30 seconds!");
+          notifyTryAgain();
           throw new Error("Rate limit exceeded");
         }
         return response.json();
@@ -30,7 +33,7 @@ function CoinPage() {
         console.error("Fetch Error:", err);
         setIsLoading(false);
         if (!err.message.includes("Coin not found") && !err.message.includes("Rate limit exceeded")) {
-          toast.error("Please try again after 30 seconds!");
+          notifyTryAgain();
         }
       });
   };
