@@ -61,6 +61,7 @@ function CoinPage() {
         ) : (
           <div className="h-fit w-full flex items-center justify-center  text-xl text-white ">
             {<CoinPageCard 
+            coinId = {coinID}
               name= {coinData.name}
               image = {coinData.image.small}
               symbol = {coinData.symbol} 

@@ -3,8 +3,10 @@ import React from "react";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import "react-lazy-load-image-component/src/effects/opacity.css";
 import NumbersDiv from "./NumbersDiv";
+import CryptoChart from "../CryptoChart";
 
 function CoinPageCard({
+  coinId = "",
   name = "",
   image = "",
   currentPrice = 0,
@@ -45,7 +47,7 @@ function CoinPageCard({
 
   return (
     <>
-      <div className="w-full h-fit py-10 flex gap-2 items-center max-[450px]:justify-center">
+      <div className="w-full h-fit py-10 flex gap-2 items-center max-[845px]:flex-col max-[450px]:justify-center">
         <div className="coinData w-fit h-fit p-5 rounded-lg flex flex-col gap-5  bg-secondary-color
         
         ">
@@ -95,9 +97,9 @@ function CoinPageCard({
           </div>
         </div>
 
-        {/* <div className="coinGraph w-fit h-fit p-5 rounded-lg bg-secondary-color">
-          <div>Graph</div>
-        </div> */}
+        <div className="coinGraph w-1/2 h-auto p-5 rounded-lg max-[845px]:w-full max-[845px]:px-0 ">
+          <CryptoChart coinId={coinId} name={name} />
+        </div>
 
         {/* <div className="coinSummary w-fit h-fit p-5 rounded-lg bg-secondary-color">
           <div>Summary</div>
