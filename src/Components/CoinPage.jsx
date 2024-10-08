@@ -64,7 +64,15 @@ function CoinPage() {
               name= {coinData.name}
               image = {coinData.image.small}
               symbol = {coinData.symbol} 
-              priceChange24HR = {coinData.market_data.price_change_percentage_24h}/>|| (
+              priceChange24h = {coinData.market_data.price_change_percentage_24h}
+              currentPrice = {coinData.market_data.current_price.usd}
+              marketCap = {coinData.market_data.market_cap.usd}
+              marketCapChange24h = {coinData.market_data.market_cap_change_percentage_24h}
+              volume24h={coinData.market_data.total_volume.usd}
+              circulatingSupply={coinData.market_data.circulating_supply}
+              totalSupply={coinData.market_data.total_supply}
+              maxSupply={coinData.market_data.max_supply}
+              />|| (
               <span className="mt-[200px]">No data found</span>
             )}
           </div>
