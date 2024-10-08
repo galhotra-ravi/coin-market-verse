@@ -2,16 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CoinPageCard from "./Cards/CoinPageCard";
 
 function CoinPage() {
   const { coinID } = useParams();
-  const [coinsData, setCoinsData] = useState({});
+  const [coinData, setcoinData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const notifyNotFound = () => toast.error("Coin not found", { toastId: "not-found" });
-  const notifyTryAgain = () => toast.error("Please try again after 30 seconds!", { toastId: "try-again" });
+  const notifyNotFound = () =>
+    toast.error("Coin not found", { toastId: "not-found" });
+  const notifyTryAgain = () =>
+    toast.error("Please try again after 30 seconds!", { toastId: "try-again" });
 
-  const fetchCoinsData = () => {
+  const fetchcoinData = () => {
     setIsLoading(true);
     fetch(`https://api.coingecko.com/api/v3/coins/${coinID}`)
       .then((response) => {
@@ -26,20 +29,24 @@ function CoinPage() {
         return response.json();
       })
       .then((data) => {
-        setCoinsData(data);
+        console.log(data)
+        setcoinData(data);
         setIsLoading(false);
       })
       .catch((err) => {
         console.error("Fetch Error:", err);
         setIsLoading(false);
-        if (!err.message.includes("Coin not found") && !err.message.includes("Rate limit exceeded")) {
+        if (
+          !err.message.includes("Coin not found") &&
+          !err.message.includes("Rate limit exceeded")
+        ) {
           notifyTryAgain();
         }
       });
   };
 
   useEffect(() => {
-    fetchCoinsData();
+    fetchcoinData();
   }, [coinID]);
 
   return (
@@ -53,7 +60,13 @@ function CoinPage() {
           </div>
         ) : (
           <div className="h-fit w-full flex items-center justify-center  text-xl text-white ">
-            {coinsData.description?.en || <span className="mt-[200px]">No data found</span> }
+            {<CoinPageCard 
+              name= {coinData.name}
+              image = {coinData.image.small}
+              symbol = {coinData.symbol} 
+              priceChange24HR = {coinData.market_data.price_change_percentage_24h}/>|| (
+              <span className="mt-[200px]">No data found</span>
+            )}
           </div>
         )}
       </div>
