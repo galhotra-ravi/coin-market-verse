@@ -18,7 +18,14 @@ function CoinPageCard({
   maxSupply = 0,
 }) {
   const formatCommas = (number) => {
-    return number.toLocaleString("en-US");
+    if(number != null) {
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 10
+      }).format(number)
+    } else{
+      return '∞'
+    }
   };
   const trimDecimals = (number) => {
     return parseFloat(number.toFixed(2)); // Keeps 2 decimal places

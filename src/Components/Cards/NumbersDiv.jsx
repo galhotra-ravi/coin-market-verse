@@ -7,11 +7,12 @@ function NumbersDiv({
   isChangeShown = false,
   coinSymbol = '',
   includeDollarSymbol = false,
-  includeCoinSymbol = false
+  includeCoinSymbol = false,
+  isValueInfinte = false,
 }) {
   return (
     <>
-      <div className="w-80 flex items-center justify-between">
+      <div className="w-auto gap-5 flex items-center justify-between">
         <h6 className="text-sm font-semibold text-gray-400">{title}</h6>
         <div className="flex gap-2">
           {isChangeShown ? (

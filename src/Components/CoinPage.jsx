@@ -14,7 +14,7 @@ function CoinPage() {
   const notifyTryAgain = () =>
     toast.error("Please try again after 30 seconds!", { toastId: "try-again" });
 
-  const fetchcoinData = () => {
+  const fetchCoinData = () => {
     setIsLoading(true);
     fetch(`https://api.coingecko.com/api/v3/coins/${coinID}`)
       .then((response) => {
@@ -46,7 +46,7 @@ function CoinPage() {
   };
 
   useEffect(() => {
-    fetchcoinData();
+    fetchCoinData();
   }, [coinID]);
 
   return (
