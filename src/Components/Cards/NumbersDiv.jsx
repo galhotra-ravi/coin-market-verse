@@ -12,7 +12,7 @@ function NumbersDiv({
 }) {
   return (
     <>
-      <div className="w-auto gap-5 flex items-center justify-between">
+      <div className="w-auto min-w-[350px] gap-5 flex items-center justify-between">
         <h6 className="text-sm font-semibold text-gray-400">{title}</h6>
         <div className="flex gap-2">
           {isChangeShown ? (

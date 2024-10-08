@@ -12,6 +12,25 @@ function CoinCard({
   index = 0,
   priceChange24h = 0,
 }) {
+
+  const formatCommas = (number) => {
+      return new Intl.NumberFormat('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 10
+      }).format(number)
+    
+  };
+  const trimDecimals = (number) => {
+    return parseFloat(number.toFixed(2)); // Keeps 2 decimal places
+  };
+
+  symbol = symbol.toUpperCase()
+
+  price = formatCommas(price);
+  marketCap = formatCommas(marketCap);
+
+  priceChange24h = trimDecimals(priceChange24h);
+
   return (
     <>
       <div className="h-40 w-[30%] min-w-40 rounded-2xl bg-secondary-color shadow-md shadow-black flex flex-col justify-between hover:bg-third-color hover:cursor-pointer transition-all ease-in-out duration-300">
@@ -36,7 +55,7 @@ function CoinCard({
             <div className="my-1">
               <h2 className="font-bold text-xl text-center">${price} </h2>
               <p
-                className={`text-center text-sm font-medium ${
+                className={`text-center text-sm font-bold ${
                   priceChange24h > 0 ? "text-green-700" : "text-red-700"
                 } `}
               >
