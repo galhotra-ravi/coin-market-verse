@@ -46,7 +46,9 @@ function CoinPageCard({
   return (
     <>
       <div className="w-full h-fit py-10 flex gap-2 items-center ">
-        <div className="coinData w-fit h-fit p-5 rounded-lg flex flex-col gap-5  bg-secondary-color">
+        <div className="coinData w-fit h-fit p-5 rounded-lg flex flex-col gap-5  bg-secondary-color
+        
+        ">
           {/* image, name and symbol */}
           <div className=" flex gap-2 items-center">
             <img src={image} className="w-[35px] max-h-[35px] rounded-xl" />
@@ -75,6 +77,7 @@ function CoinPageCard({
               isChangeShown={true}
               change={marketCapChange24h}
               includeDollarSymbol={true}
+              isMarketCap = {true}
             />
             <NumbersDiv
               title={"Volume (24h)"}

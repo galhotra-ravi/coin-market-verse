@@ -8,13 +8,15 @@ function NumbersDiv({
   coinSymbol = '',
   includeDollarSymbol = false,
   includeCoinSymbol = false,
-  isValueInfinte = false,
+  isMarketCap = false
 }) {
   return (
     <>
-      <div className="w-auto min-w-[350px] gap-5 flex items-center justify-between">
+      <div className="w-auto  gap-5 flex items-center justify-between
+      max-[450px]:flex-col max-[450px]:items-start max-[450px]:gap-1 
+      ">
         <h6 className="text-sm font-semibold text-gray-400">{title}</h6>
-        <div className="flex gap-2">
+        <div className={`flex gap-2 ${isMarketCap ? 'max-[450px]:flex-row-reverse' : ''}`}>
           {isChangeShown ? (
             <p
               className={`text-base font-semibold ${
