@@ -45,7 +45,7 @@ function CoinPageCard({
 
   return (
     <>
-      <div className="w-full h-fit py-10 flex gap-2 items-center ">
+      <div className="w-full h-fit py-10 flex gap-2 items-center max-[450px]:justify-center">
         <div className="coinData w-fit h-fit p-5 rounded-lg flex flex-col gap-5  bg-secondary-color
         
         ">
@@ -58,7 +58,7 @@ function CoinPageCard({
 
           {/* price, change % */}
           <div className="flex flex-col gap-2">
-            <h2 className="text-5xl font-bold">${currentPrice}</h2>
+            <h2 className="text-5xl font-bold max-[450px]:text-4xl">${currentPrice}</h2>
             <p
               className={`text-base font-semibold ${
                 priceChange24h > 0 ? "text-green-700" : "text-red-700"

@@ -13,7 +13,7 @@ function NumbersDiv({
   return (
     <>
       <div className="w-auto  gap-5 flex items-center justify-between
-      max-[450px]:flex-col max-[450px]:items-start max-[450px]:gap-1 
+      max-[450px]:w-64 max-[450px]:flex-col max-[450px]:items-start max-[450px]:gap-1 
       ">
         <h6 className="text-sm font-semibold text-gray-400">{title}</h6>
         <div className={`flex gap-2 ${isMarketCap ? 'max-[450px]:flex-row-reverse' : ''}`}>
