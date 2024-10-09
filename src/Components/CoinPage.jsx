@@ -46,6 +46,10 @@ function CoinPage() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  }, []);
+
+  useEffect(() => {
     fetchCoinData();
   }, [coinID]);
 

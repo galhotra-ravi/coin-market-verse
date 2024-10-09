@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  }, []);
   return (
     <div className='text-white h-[calc(100vh_-_170px)] py-10 w-full flex items-center justify-center max-sm:h-fit '>
       

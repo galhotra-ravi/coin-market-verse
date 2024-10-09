@@ -52,7 +52,7 @@ function Nav() {
     </nav>
     {isMenuOpen && (
     <ul 
-    className={`h-fit py-24 flex flex-col items-center justify-center gap-5 text-2xl text-white select-none sm:hidden menu ${isMenuOpen ? "menu-open" : ""}`}>
+    className={`h-fit py-14 flex flex-col items-center justify-center gap-5 text-2xl text-white select-none sm:hidden menu ${isMenuOpen ? "menu-open" : ""}`}>
         <li className="hover:scale-110 hover:text-[#5a38fd] transition-all ease-in-out duration-50">
           <Link to={"/coins"} onClick={handleLinkClick}>Coins</Link>
         </li>

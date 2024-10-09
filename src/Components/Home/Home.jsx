@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import heroImage from "../../assets/hero-image.svg";
 import { Link } from 'react-router-dom';
 import TradingViewTicker from "../TradingViewTicker";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  }, []);
   return (
     <>
     <TradingViewTicker />
