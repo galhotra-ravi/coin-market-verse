@@ -85,6 +85,12 @@ function CoinPage() {
                 totalSupply={coinData.market_data.total_supply || "N/A"}
                 maxSupply={coinData.market_data.max_supply || "N/A"}
                 description={coinData.description.en || "N/A"}
+                website={coinData.links.homepage[0] || "N/A"}
+                whitepaper={coinData.links.whitepaper || "N/A"}
+                facebook={coinData.links.facebook_username || "N/A"}
+                telegram={coinData.links.twitter_screen_name || "N/A"}
+                reddit={coinData.links.subreddit_url || "N/A"}
+                twitter={coinData.links.twitter_screen_name || "N/A"}
               />
             ) : (
               <span className="mt-[200px]">No data found</span>
