@@ -8,6 +8,7 @@ import CryptoChart from "../CryptoChart";
 function CoinPageCard({
   coinId = "",
   name = "",
+  description = "",
   image = "",
   currentPrice = 0,
   priceChange24h = 0,
@@ -33,6 +34,10 @@ function CoinPageCard({
     return parseFloat(number.toFixed(2)); // Keeps 2 decimal places
   };
 
+  const removeHtmlTags = (text)=> {
+    return text.replace(/<[^>]*>/g, '');
+}
+
   symbol = symbol.toUpperCase()
 
   currentPrice = formatCommas(currentPrice);
@@ -45,10 +50,13 @@ function CoinPageCard({
   priceChange24h = trimDecimals(priceChange24h);
   marketCapChange24h = trimDecimals(marketCapChange24h);
 
+  description = removeHtmlTags(description)
+
   return (
     <>
-      <div className="w-full h-fit py-10 flex gap-2 items-center max-[845px]:flex-col max-[450px]:justify-center">
-        <div className="coinData w-fit h-fit p-5 rounded-lg flex flex-col gap-5  bg-secondary-color
+      <div className="w-full h-fit py-10 flex flex-col gap-10 items-center  max-[1200px]:flex-col max-[450px]:justify-center">
+        <div className="h-full w-full flex items-center gap- max-[1200px]:flex-col max-[450px]:justify-center">
+        <div className="coinData w-fit min-w-96 h-fit p-5 rounded-lg flex flex-col gap-5 max-[1200px]:w-full  bg-secondary-color max-[450px]:min-w-fit
         
         ">
           {/* image, name and symbol */}
@@ -97,13 +105,20 @@ function CoinPageCard({
           </div>
         </div>
 
-        <div className="coinGraph w-1/2 h-auto p-5 rounded-lg max-[845px]:w-full max-[845px]:px-0 ">
+        <div className="coinGraph w-full h-auto p-5 rounded-lg max-[1200px]:w-full max-[845px]:px-0 ">
           <CryptoChart coinId={coinId} name={name} />
         </div>
+        </div>
 
-        {/* <div className="coinSummary w-fit h-fit p-5 rounded-lg bg-secondary-color">
+        <div className="coinSummary w-full max-[450px]:max-w-[330px]  h-fit p-5 rounded-lg flex flex-col gap-5 bg-secondary-color">
           <div>Summary</div>
-        </div> */}
+
+          {/* image, name and symbol */}
+          <div className=" flex flex-col gap-2 ">
+            <p className="text-base max-[450px]:max-w-[300px] text-justify">{description}</p>
+          </div>
+
+        </div>
       </div>
     </>
   );

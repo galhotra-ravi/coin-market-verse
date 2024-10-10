@@ -84,6 +84,7 @@ function CoinPage() {
                 }
                 totalSupply={coinData.market_data.total_supply || "N/A"}
                 maxSupply={coinData.market_data.max_supply || "N/A"}
+                description={coinData.description.en || "N/A"}
               />
             ) : (
               <span className="mt-[200px]">No data found</span>
