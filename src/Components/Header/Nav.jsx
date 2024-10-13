@@ -16,7 +16,7 @@ function Nav() {
     <>
     <nav className="w-full h-20 border-b-[1px] border-b-secondary-color flex items-center justify-around">
       <Link to={""}>
-        <h1 className="text-[#5a38fd] text-2xl font-bold">Crypto  <span className="text-white">Market Verse</span></h1>
+        <h1 className="text-[#5a38fd] text-2xl font-bold">Coin  <span className="text-white">Market Verse</span></h1>
       </Link>
       <ul className="flex gap-8 text-white font-medium max-sm:hidden">
         <li className="hover:scale-110 hover:text-[#5a38fd] transition-all ease-in-out duration-50">
