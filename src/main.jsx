@@ -10,6 +10,7 @@ import Exhanges from './Components/Exhanges.jsx'
 import About from './Components/About.jsx'
 import NotFound from './Components/NotFound.jsx'
 import CoinPage from './Components/CoinPage.jsx'
+import ExchangePage from './Components/ExchangePage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: 'exchanges',
         element: <Exhanges />
+      },
+      {
+        path: 'exchanges/:exchangeID',
+        element: <ExchangePage />
       },
       {
         path: 'about',

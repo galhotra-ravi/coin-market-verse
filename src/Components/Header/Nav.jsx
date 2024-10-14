@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Nav.css";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +17,7 @@ function Nav() {
       <Link to={""}>
         <h1 className="text-[#5a38fd] text-2xl font-bold">Coin  <span className="text-white">Market Verse</span></h1>
       </Link>
-      <ul className="flex gap-8 text-white font-medium max-sm:hidden">
+      <ul className="flex gap-8 text-white font-medium max-md:hidden">
         <li className="hover:scale-110 hover:text-[#5a38fd] transition-all ease-in-out duration-50">
           <Link to={"/coins"}>Coins</Link>
         </li>
@@ -30,8 +29,8 @@ function Nav() {
         </li>
       </ul>
 
-      <div className="flex gap-5">
-        <div className="w-72 h-10 bg-third-color rounded-md flex justify-evenly items-center px-3 max-lg:hidden">
+      {/* <div className="flex gap-5"> */}
+        {/* <div className="w-72 h-10 bg-third-color rounded-md flex justify-evenly items-center px-3 max-lg:hidden">
           <i className="fa-solid fa-magnifying-glass text-[#9ca3af] text-xs"></i>
           <input
             type="search"
@@ -40,14 +39,14 @@ function Nav() {
             placeholder="Search"
             className="w-64 h-10 bg-third-color rounded-md px-2 text-white outline-none"
           />
-        </div>
-        <div className="h-10 w-10 rounded-md  flex justify-center items-center bg-third-color hover:bg-secondary-color hover:cursor-pointer transition-all ease-in-out duration-150 lg:hidden">
+        </div> */}
+        {/* <div className="h-10 w-10 rounded-md  flex justify-center items-center bg-third-color hover:bg-secondary-color hover:cursor-pointer transition-all ease-in-out duration-150 lg:hidden">
           <i className="fa-solid fa-magnifying-glass  text-[#9ca3af]"></i>
-        </div>
-        <div id="menuButton" className="h-10 w-10 rounded-md  flex justify-center items-center bg-third-color hover:bg-secondary-color hover:cursor-pointer transition-all ease-in-out duration-150 sm:hidden" onClick={openMenu}>
+        </div> */}
+        <div id="menuButton" className="h-10 w-10 rounded-md  flex justify-center items-center bg-third-color hover:bg-secondary-color hover:cursor-pointer transition-all ease-in-out duration-150 md:hidden" onClick={openMenu}>
           <i className="fa-solid fa-bars  text-[#9ca3af]"></i>
         </div>
-      </div>
+      {/* </div> */}
       
     </nav>
     {isMenuOpen && (
